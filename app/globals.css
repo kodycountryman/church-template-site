@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Surface */
+  --color-bg: #FFFFFF;
+  --color-bg-soft: #F7F7F8;
+  --color-bg-mute: #EFEFF1;
+
+  /* Ink (text) */
+  --color-ink: #0A0A0A;
+  --color-ink-700: #1F2024;
+  --color-ink-500: #4B5563;
+  --color-ink-400: #6B7280;
+  --color-ink-300: #9CA3AF;
+  --color-ink-200: #D1D5DB;
+  --color-ink-100: #E5E7EB;
+
+  /* Accent — electric blue */
+  --color-accent: #2563EB;
+  --color-accent-600: #1D4FD7;
+  --color-accent-50: #EFF4FF;
+
+  /* Tokens */
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-ink);
+  --color-muted: var(--color-ink-400);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+
+  --container-content: 80rem;
+
+  --shadow-card: 0 1px 2px rgba(10,10,10,0.04), 0 8px 24px -12px rgba(10,10,10,0.08);
+  --shadow-elevated: 0 2px 4px rgba(10,10,10,0.04), 0 24px 48px -16px rgba(10,10,10,0.12);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #FFFFFF;
+}
+
+/* Tight, bold display headings — Elevation-style */
+.h-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+}
+
+.h-display-tight {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+/* Subtle hairline */
+.rule {
+  height: 1px;
+  background: var(--color-ink-100);
+}
