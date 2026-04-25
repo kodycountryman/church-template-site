@@ -51,6 +51,26 @@ The admin lives at <http://localhost:3000/admin/login>. Any email + password wor
 
 ---
 
+## Deploy to Cloudflare Workers
+
+This project uses [OpenNext for Cloudflare](https://opennext.js.org/cloudflare).
+
+**One-time setup in the Cloudflare dashboard:**
+1. Create a new Workers project (NOT a Pages project — Workers is the modern path).
+2. Connect this GitHub repo. Cloudflare auto-detects the Next.js + OpenNext setup.
+3. Make sure the worker name in the dashboard matches `name` in [wrangler.jsonc](./wrangler.jsonc) (currently `church-template-site`). If they differ, deploy fails with error code `10143` because OpenNext's `WORKER_SELF_REFERENCE` binding can't resolve.
+
+**Local commands:**
+
+```bash
+pnpm preview   # builds + previews the Worker locally with wrangler
+pnpm deploy    # builds + deploys to Cloudflare
+```
+
+You'll need `wrangler login` once before `pnpm deploy`.
+
+---
+
 ## Hire me
 
 Want a site like this for your church? It can be customized in 2–6 weeks. Three tiers, fixed-price.

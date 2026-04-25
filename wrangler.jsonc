@@ -1,0 +1,22 @@
+/**
+ * Cloudflare Workers config for the Kindred Church template site.
+ *
+ * Name MUST match the Cloudflare project / worker name in the dashboard
+ * (here: "church-template-site"). OpenNext adds a WORKER_SELF_REFERENCE
+ * service binding at deploy time pointing to this same name — if the
+ * names don't match, deploy fails with error 10143.
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "church-template-site",
+  "compatibility_date": "2025-04-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".open-next/assets"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
