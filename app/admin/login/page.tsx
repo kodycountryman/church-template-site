@@ -29,8 +29,8 @@ export default function LoginPage() {
   function quickDemo() {
     setLoading(true);
     setTimeout(() => {
-      login("mara@kindred.church", "Mara Eldridge");
-      toast.success("Logged in as Mara Eldridge");
+      login("james@kindred.church", "James Eldridge");
+      toast.success("Logged in as James Eldridge");
       router.push("/admin");
     }, 400);
   }
@@ -57,7 +57,7 @@ export default function LoginPage() {
             disabled={loading}
             className="mt-8 w-full inline-flex h-12 items-center justify-center gap-2 rounded-full bg-accent px-6 text-sm font-semibold text-white hover:bg-accent-600 transition-colors disabled:opacity-60"
           >
-            <Zap className="h-4 w-4 fill-current" /> Enter demo as Pastor Mara
+            <Zap className="h-4 w-4 fill-current" /> Enter demo as Pastor James
           </button>
 
           <div className="my-6 flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-ink-300">

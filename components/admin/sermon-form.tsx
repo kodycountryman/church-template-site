@@ -128,7 +128,7 @@ export function SermonForm({ initial }: { initial?: Sermon }) {
               <input
                 value={form.speaker}
                 onChange={(e) => update("speaker", e.target.value)}
-                placeholder="Mara Eldridge"
+                placeholder="James Eldridge"
                 className="w-full rounded-lg border border-ink-100 bg-bg px-4 py-2.5 text-sm text-ink focus:border-accent focus:outline-none"
               />
             </Field>

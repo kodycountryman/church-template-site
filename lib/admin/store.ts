@@ -178,7 +178,7 @@ const seedMedia: MediaItem[] = [
 const seedUsers: AdminUser[] = [
   {
     id: "u1",
-    name: "Mara Eldridge",
+    name: "James Eldridge",
     email: "mara@kindred.church",
     role: "Admin",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",

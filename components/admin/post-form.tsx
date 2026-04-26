@@ -20,7 +20,7 @@ export function PostForm({ initial }: { initial?: Post }) {
       title: "",
       excerpt: "",
       body: "",
-      author: "Mara Eldridge",
+      author: "James Eldridge",
       authorAvatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
       date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
       readTime: "4 min",

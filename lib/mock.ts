@@ -93,7 +93,7 @@ export const sermons: Sermon[] = [
     slug: "on-rest-and-the-arithmetic-of-grace",
     title: "On rest, and the arithmetic of grace",
     series: "The Long Obedience",
-    speaker: "Mara Eldridge",
+    speaker: "James Eldridge",
     date: "Apr 21, 2026",
     duration: "38 min",
     scripture: "Hebrews 4:1–11",
@@ -117,7 +117,7 @@ export const sermons: Sermon[] = [
     slug: "the-cloud-of-witnesses",
     title: "The cloud of witnesses",
     series: "The Long Obedience",
-    speaker: "Mara Eldridge",
+    speaker: "James Eldridge",
     date: "Apr 7, 2026",
     duration: "36 min",
     scripture: "Hebrews 12:1–3",
@@ -140,7 +140,7 @@ export const sermons: Sermon[] = [
     slug: "what-jesus-said-about-money",
     title: "What Jesus said about money",
     series: "Rooted",
-    speaker: "Mara Eldridge",
+    speaker: "James Eldridge",
     date: "Mar 24, 2026",
     duration: "39 min",
     scripture: "Matthew 6:19–24",
@@ -281,8 +281,8 @@ export const posts: Post[] = [
     excerpt:
       "It's our most-quoted line. It's also the one that confuses people the most. Here's what we actually mean — and what we don't.",
     body: "",
-    author: "Mara Eldridge",
-    authorAvatar: u("photo-1494790108377-be9c29b29330", 200),
+    author: "James Eldridge",
+    authorAvatar: u("photo-1519085360753-af0119f7cbe7", 200),
     date: "Apr 18, 2026",
     readTime: "6 min",
     cover: u("photo-1529156069898-49953e39b3ac"),
@@ -320,8 +320,8 @@ export const posts: Post[] = [
     excerpt:
       "Honest answers to the things people are too polite to bring up at the welcome table.",
     body: "",
-    author: "Mara Eldridge",
-    authorAvatar: u("photo-1494790108377-be9c29b29330", 200),
+    author: "James Eldridge",
+    authorAvatar: u("photo-1519085360753-af0119f7cbe7", 200),
     date: "Mar 27, 2026",
     readTime: "8 min",
     cover: u("photo-1517457373958-b7bdd4587205"),
@@ -331,10 +331,10 @@ export const posts: Post[] = [
 
 export const leaders: Leader[] = [
   {
-    name: "Mara Eldridge",
+    name: "James Eldridge",
     role: "Lead Pastor",
-    bio: "Mara has been preaching at Kindred since the church planted in 2019. Master's from Duke Divinity. Married to Sam, mom to two.",
-    avatar: u("photo-1494790108377-be9c29b29330", 600),
+    bio: "James has been preaching at Kindred since the church planted in 2019. Master's from Duke Divinity. Married to Sara, dad to two.",
+    avatar: u("photo-1519085360753-af0119f7cbe7", 600),
   },
   {
     name: "Daniel Kim",
@@ -358,7 +358,7 @@ export const leaders: Leader[] = [
     name: "Hannah Brooks",
     role: "Kids Director",
     bio: "Hannah runs Kindred Kids and keeps 200 children laughing every week. Background in early childhood education.",
-    avatar: u("photo-1531746020798-e6953c6e8e04", 600),
+    avatar: u("photo-1487412720507-e7ab37603c6f", 600),
   },
   {
     name: "Owen Park",

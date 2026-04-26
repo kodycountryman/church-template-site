@@ -46,7 +46,7 @@ export default function SermonsAdmin() {
           </select>
           <select className="rounded-lg border border-ink-100 bg-bg px-3 py-2 text-sm text-ink focus:border-accent focus:outline-none">
             <option>All speakers</option>
-            <option>Mara Eldridge</option>
+            <option>James Eldridge</option>
             <option>Daniel Kim</option>
           </select>
         </div>
