@@ -123,16 +123,20 @@ export default function Home() {
             icon={<Calendar className="h-5 w-5" />}
             title="9:00 & 11:00 AM"
             body="Two identical services, about 70 minutes. Doors open thirty minutes early — coffee is on us."
+            href="/visit#times"
           />
           <Card
             icon={<MapPin className="h-5 w-5" />}
             title="412 Carver Street"
             body="Free parking on-site with greeters at every entrance. We'll show you exactly where to go."
+            href="https://www.google.com/maps/search/?api=1&query=412+Carver+Street+Greenville+SC+29601"
+            external
           />
           <Card
             icon={<Play className="h-5 w-5" />}
             title="Kids & Students"
             body="Engaging programs for ages 0–12 during both services. Middle and high school meet Wednesday nights."
+            href="/ministries/kindred-kids"
           />
         </StaggerChildren>
       </Section>
@@ -141,32 +145,35 @@ export default function Home() {
       <section className="relative overflow-hidden border-y border-ink-100 bg-bg-soft">
         <div className="mx-auto grid w-full max-w-[80rem] gap-12 px-6 py-24 md:px-10 md:py-32 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <Reveal variants={scaleIn} className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-ink shadow-[var(--shadow-elevated)]">
-            <Image
-              src="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1600&q=80"
-              alt="Pastor James Eldridge speaking"
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
-            <div className="absolute inset-0 flex flex-col justify-between p-8">
-              <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
-                <span>Message 4</span>
-                <span>Hebrews 4:1–11</span>
-              </div>
-              <div>
-                <button
-                  className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-white text-ink transition-transform hover:scale-105"
-                  aria-label="Play sermon"
-                >
-                  <Play className="h-5 w-5 fill-current" />
-                </button>
-                <div className="mt-6 text-2xl font-bold text-white tracking-tight leading-tight">
-                  The Long Obedience
+            <Link
+              href="/sermons/on-rest-and-the-arithmetic-of-grace"
+              className="group block absolute inset-0"
+              aria-label="Watch: The Long Obedience"
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1600&q=80"
+                alt="Pastor James Eldridge speaking"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-between p-8">
+                <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
+                  <span>Message 4</span>
+                  <span>Hebrews 4:1–11</span>
                 </div>
-                <div className="mt-1 text-sm text-white/70">James Eldridge · 38 min</div>
+                <div>
+                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-white text-ink transition-transform duration-300 group-hover:scale-110 group-hover:bg-accent group-hover:text-white">
+                    <Play className="h-5 w-5 fill-current" />
+                  </div>
+                  <div className="mt-6 text-2xl font-bold text-white tracking-tight leading-tight">
+                    The Long Obedience
+                  </div>
+                  <div className="mt-1 text-sm text-white/70">James Eldridge · 38 min</div>
+                </div>
               </div>
-            </div>
+            </Link>
           </Reveal>
 
           <div>
@@ -324,18 +331,35 @@ function Card({
   icon,
   title,
   body,
+  href,
+  external,
 }: {
   icon: React.ReactNode;
   title: string;
   body: string;
+  href?: string;
+  external?: boolean;
 }) {
-  return (
-    <div className="group relative rounded-2xl border border-ink-100 bg-bg p-8 transition-all hover:border-accent/30 hover:shadow-[var(--shadow-card)] hover:-translate-y-1 transition-transform duration-200">
+  const inner = (
+    <>
       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent-50 text-accent">
         {icon}
       </div>
-      <div className="mt-8 text-2xl font-bold text-ink tracking-tight">{title}</div>
+      <div className="mt-8 text-2xl font-bold text-ink tracking-tight flex items-center gap-2">
+        {title}
+        {href && <ArrowUpRight className="h-4 w-4 text-ink-300 opacity-0 -translate-y-0.5 transition-all group-hover:opacity-100 group-hover:text-accent" />}
+      </div>
       <p className="mt-3 text-ink-500 leading-relaxed">{body}</p>
-    </div>
+    </>
   );
+
+  const cls = "group relative rounded-2xl border border-ink-100 bg-bg p-8 transition-all hover:border-accent/30 hover:shadow-[var(--shadow-card)] hover:-translate-y-1 duration-200 block";
+
+  if (href && external) {
+    return <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>{inner}</a>;
+  }
+  if (href) {
+    return <Link href={href} className={cls}>{inner}</Link>;
+  }
+  return <div className={cls.replace(" block", "")}>{inner}</div>;
 }

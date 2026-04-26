@@ -63,7 +63,7 @@ export default function VisitPage() {
       </section>
 
       {/* DETAILS GRID */}
-      <Section>
+      <Section id="times">
         <div className="mx-auto grid w-full max-w-[80rem] gap-6 px-6 md:grid-cols-2 md:px-10 lg:grid-cols-4">
           <DetailCard icon={<Clock />} label="Service times" value="Sundays · 9 & 11 AM" sub="Two identical services" />
           <DetailCard icon={<MapPin />} label="Address" value={brand.address.line1} sub={brand.address.line2} />

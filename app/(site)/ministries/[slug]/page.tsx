@@ -73,25 +73,6 @@ export default async function MinistryDetail({ params }: { params: Promise<{ slu
         </div>
       </section>
 
-      {/* ── 2. STATS BAR ─────────────────────────────────────────────────── */}
-      {m.stats && (
-        <div className="bg-ink">
-          <div className="mx-auto grid w-full max-w-[80rem] grid-cols-2 px-6 md:grid-cols-4 md:px-10">
-            {m.stats.map((s, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center justify-center border-b border-white/10 px-6 py-10 text-center md:border-b-0 md:border-r last:border-r-0"
-              >
-                <div className="h-display text-4xl text-white md:text-5xl">{s.value}</div>
-                <div className="mt-2 text-xs font-semibold uppercase tracking-[0.15em] text-white/50">
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
       {/* ── 3. ABOUT + SIGNUP ────────────────────────────────────────────── */}
       <section className="py-24 md:py-32">
         <div className="mx-auto grid w-full max-w-[80rem] gap-16 px-6 md:px-10 lg:grid-cols-[2fr_1fr]">
