@@ -55,16 +55,25 @@ The admin lives at <http://localhost:3000/admin/login>. Any email + password wor
 
 This project uses [OpenNext for Cloudflare](https://opennext.js.org/cloudflare).
 
-**One-time setup in the Cloudflare dashboard:**
-1. Create a new Workers project (NOT a Pages project — Workers is the modern path).
-2. Connect this GitHub repo. Cloudflare auto-detects the Next.js + OpenNext setup.
-3. Make sure the worker name in the dashboard matches `name` in [wrangler.jsonc](./wrangler.jsonc) (currently `church-template-site`). If they differ, deploy fails with error code `10143` because OpenNext's `WORKER_SELF_REFERENCE` binding can't resolve.
+**One-time setup in the Cloudflare dashboard** (Workers & Pages → connect repo):
+
+| Setting | Value |
+| --- | --- |
+| **Worker name** | `church-template-site` (must match `name` in [wrangler.jsonc](./wrangler.jsonc) — mismatched names cause error code `10143`) |
+| **Build command** | `pnpm run build:cf` (runs `next build` + bundles the OpenNext worker into `.open-next/`) |
+| **Deploy command** | `npx wrangler deploy` (default) |
+| **Root directory** | `/` |
+
+If you only set the build command to `pnpm run build` (the default Cloudflare auto-detect), the deploy step won't find `.open-next/worker.js` and you'll see *"Could not find compiled Open Next config"*. Use `build:cf`.
 
 **Local commands:**
 
 ```bash
-pnpm preview   # builds + previews the Worker locally with wrangler
-pnpm deploy    # builds + deploys to Cloudflare
+pnpm dev        # local dev (next dev)
+pnpm build      # quick TS/lint check (next build only)
+pnpm build:cf   # full Cloudflare build (next build + opennextjs-cloudflare build)
+pnpm preview    # build + preview the Worker locally with wrangler
+pnpm deploy     # build + deploy to Cloudflare
 ```
 
 You'll need `wrangler login` once before `pnpm deploy`.
