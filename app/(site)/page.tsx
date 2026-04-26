@@ -151,7 +151,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
             <div className="absolute inset-0 flex flex-col justify-between p-8">
               <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
-                <span>Episode 04</span>
+                <span>Message 4</span>
                 <span>Hebrews 4:1–11</span>
               </div>
               <div>

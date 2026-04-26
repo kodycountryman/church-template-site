@@ -40,12 +40,16 @@ export function AnimatedText({
       {words.map((word, i) => (
         <span
           key={`${word}-${i}`}
-          className="overflow-hidden inline-block align-bottom"
-          // Add a trailing space after every word except the last
-          style={{ marginRight: i < words.length - 1 ? "0.25em" : undefined }}
+          style={{
+            display: "inline-block",
+            overflow: "hidden",
+            paddingBottom: "0.15em",
+            marginBottom: "-0.15em",
+            verticalAlign: "bottom",
+          }}
         >
           <motion.span className="inline-block" variants={wordChild}>
-            {word}
+            {word}{i < words.length - 1 ? "\u00A0" : ""}
           </motion.span>
         </span>
       ))}

@@ -7,7 +7,6 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { brand } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 import { TemplateBanner } from "./template-banner";
-import { LogoMark } from "./logo";
 
 type NavLink = {
   href: string;
@@ -112,19 +111,14 @@ export function Nav() {
       <div className="mx-auto flex h-20 w-full max-w-[80rem] items-center justify-between px-6 md:px-10">
         <Link
           href="/"
-          className="flex items-center gap-2.5"
+          className={cn(
+            "text-2xl font-bold tracking-tight transition-colors duration-300",
+            isLight ? "text-white" : "text-ink",
+          )}
+          style={{ letterSpacing: "-0.04em" }}
           aria-label={`${brand.longName} home`}
         >
-          <LogoMark size={28} />
-          <span
-            className={cn(
-              "text-xl font-bold tracking-tight transition-colors duration-300",
-              isLight ? "text-white" : "text-ink",
-            )}
-            style={{ letterSpacing: "-0.04em" }}
-          >
-            {brand.name}<span className={isLight ? "text-white/60" : "text-accent"}>.</span>
-          </span>
+          {brand.name}<span className={isLight ? "text-white/60" : "text-accent"}>.</span>
         </Link>
 
         {/* Desktop nav */}
@@ -231,29 +225,14 @@ export function Nav() {
         <div className="md:hidden border-t border-ink-100 bg-bg/95 backdrop-blur-xl">
           <div className="mx-auto flex w-full max-w-[80rem] flex-col gap-1 px-6 py-6">
             {links.map((l) => (
-              <div key={l.href}>
-                <Link
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="rounded-lg px-3 py-3 text-lg font-medium text-ink-700 hover:bg-bg-soft block"
-                >
-                  {l.label}
-                </Link>
-                {l.children && (
-                  <div className="ml-4 mb-2 flex flex-col gap-0.5">
-                    {l.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        onClick={() => setOpen(false)}
-                        className="rounded-lg px-3 py-2 text-sm text-ink-500 hover:bg-bg-soft hover:text-ink"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <Link
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="rounded-lg px-3 py-3 text-lg font-medium text-ink-700 hover:bg-bg-soft block"
+              >
+                {l.label}
+              </Link>
             ))}
             <Link
               href="/give"
