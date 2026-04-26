@@ -27,8 +27,9 @@ export function TemplateBanner() {
             <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
               <Sparkles className="h-3 w-3 text-white" />
             </div>
-            <p className="text-xs md:text-sm font-medium text-white/95 truncate">
-              {template.bannerText}
+            <p className="text-xs md:text-sm font-medium text-white/95">
+              <span className="sm:hidden">Like this design? Get it for your church.</span>
+              <span className="hidden sm:inline">{template.bannerText}</span>
             </p>
           </div>
           <div className="flex shrink-0 items-center gap-3">
