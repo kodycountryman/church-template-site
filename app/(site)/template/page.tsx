@@ -20,13 +20,13 @@ const features = [
 const tiers = [
   {
     name: "Essentials",
-    price: "$3,500",
+    price: "$2,400",
     summary: "A polished marketing site \u2014 sermons, events, contact \u2014 with editing built-in.",
     items: ["Up to 8 pages", "Custom design system", "Admin dashboard (sermons, events, blog)", "Basic SEO + analytics", "1 round of revisions"],
   },
   {
     name: "Full church",
-    price: "$6,500",
+    price: "$4,000",
     highlight: true,
     summary: "Everything in Essentials plus the full content surface area Kindred has on display.",
     items: ["Up to 20 pages", "Sermon archive + media player", "Online giving (Stripe)", "Event RSVPs + ministry signups", "Advanced SEO + JSON-LD", "Full admin (CRUD on every resource)", "2 rounds of revisions", "30 days post-launch support"],
